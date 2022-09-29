@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main(void)
+{
+	int arr1[3][2] = { {1,2},{3,4},{5,6} };
+	int arr2[2][3] = { {6,5,4},{3,2,1} };
+	int arr3[3][3] = { 0 };
+	printf("arr1的矩阵为：\n");
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			printf("%d\t", arr1[i][j]);
+		}
+		printf("\n");
+	}
+	printf("arr2的矩阵为：\n");
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("%d\t", arr2[i][j]);
+		}
+		printf("\n");
+	}
+	//矩阵相乘
+	for (int i = 0; i < 3; i++)
+	{
+		
+		for (int j = 0; j < 3; j++)
+		{
+			int sum = 0;
+			
+			for (int z = 0; z < 2; z++)
+			{
+				sum += arr1[i][z] * arr2[z][j];
+			}
+			arr3[i][j] = sum;
+		}
+		
+	}
+    printf("arr3的矩阵为：\n");
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("%d\t", arr3[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
